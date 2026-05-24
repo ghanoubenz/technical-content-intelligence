@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACME Integrity UTCD 47 - Carbon Pilot Carousel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pc-navy: #0B1526;
+    --pc-blue: #1456A0;
+    --pc-blue-bright: #0F62FE;
+    --pc-cyan: #78A9FF;
+    --pc-light: #F4F4F4;
+    --pc-cool: #EAF1FA;
+    --pc-white: #FFFFFF;
+    --pc-black: #161616;
+    --pc-gray-70: #525252;
+    --pc-gray-30: #C6C6C6;
+    --pc-gray-20: #E0E0E0;
+    --pc-warning: #F1C21B;
+    --pc-red: #DA1E28;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #8d8d8d;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+    padding: 48px;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    font-family: "IBM Plex Sans", Arial, sans-serif;
+    letter-spacing: 0;
+  }
+
+  .slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(20, 86, 160, 0.13) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(20, 86, 160, 0.10) 1px, transparent 1px);
+    background-size: 135px 135px;
+    pointer-events: none;
+  }
+
+  .dark { background: var(--pc-navy); color: var(--pc-white); }
+  .light { background: var(--pc-light); color: var(--pc-black); }
+  .blue { background: var(--pc-blue-bright); color: var(--pc-white); }
+  .cool { background: var(--pc-cool); color: var(--pc-black); }
+
+  .brand {
+    position: absolute;
+    top: 56px;
+    left: 64px;
+    font: 600 18px/1 "IBM Plex Mono", monospace;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  .meta {
+    position: absolute;
+    top: 56px;
+    right: 64px;
+    font: 500 14px/1 "IBM Plex Mono", monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  .dark .brand, .dark .meta, .blue .brand, .blue .meta { color: rgba(255,255,255,0.74); }
+  .light .brand, .light .meta, .cool .brand, .cool .meta { color: rgba(22,22,22,0.62); }
+
+  .rule-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--pc-blue-bright);
+    z-index: 6;
+  }
+
+  .footer {
+    position: absolute;
+    left: 64px;
+    right: 64px;
+    bottom: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font: 500 14px/1 "IBM Plex Mono", monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  .dark .footer, .blue .footer { color: rgba(255,255,255,0.62); }
+  .light .footer, .cool .footer { color: rgba(22,22,22,0.56); }
+
+  .content {
+    position: absolute;
+    inset: 0;
+    padding: 148px 64px 120px;
+    z-index: 2;
+  }
+
+  .eyebrow {
+    font: 600 15px/1.2 "IBM Plex Mono", monospace;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--pc-blue-bright);
+  }
+
+  .dark .eyebrow, .blue .eyebrow { color: var(--pc-cyan); }
+
+  h1 {
+    font-size: 88px;
+    font-weight: 300;
+    line-height: 1.03;
+    letter-spacing: 0;
+    max-width: 880px;
+  }
+
+  h1 strong, h2 strong, .strong { font-weight: 600; }
+
+  h2 {
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: 0;
+    max-width: 850px;
+  }
+
+  .serif {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .body {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.38;
+    max-width: 760px;
+    margin-top: 42px;
+  }
+
+  .dark .body, .blue .body { color: rgba(255,255,255,0.76); }
+  .light .body, .cool .body { color: var(--pc-gray-70); }
+
+  .kicker-line {
+    width: 168px;
+    height: 2px;
+    background: currentColor;
+    opacity: 0.35;
+    margin: 42px 0 0;
+  }
+
+  .photo-slot {
+    position: absolute;
+    border: 1px solid rgba(120,169,255,0.95);
+    background:
+      linear-gradient(135deg, rgba(120,169,255,0.22), rgba(120,169,255,0.04)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.08) 0 10px, transparent 10px 20px);
+    overflow: hidden;
+  }
+
+  .photo-slot::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 22px;
+    bottom: 20px;
+    right: 22px;
+    font: 500 13px/1.35 "IBM Plex Mono", monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: inherit;
+    opacity: 0.72;
+  }
+
+  .technical-art {
+    position: absolute;
+    border: 1px solid rgba(120,169,255,0.85);
+    background:
+      radial-gradient(circle at 36% 44%, rgba(15,98,254,0.45), transparent 0 8%, rgba(15,98,254,0.16) 8% 18%, transparent 18%),
+      linear-gradient(90deg, transparent 0 48%, rgba(120,169,255,0.80) 48% 49%, transparent 49%),
+      linear-gradient(rgba(120,169,255,0.28) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,169,255,0.22) 1px, transparent 1px);
+    background-size: auto, auto, 36px 36px, 36px 36px;
+  }
+
+  .pipe-cross-section {
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    border: 1px solid rgba(120,169,255,0.8);
+    position: relative;
+    background:
+      radial-gradient(circle, transparent 0 38%, rgba(15,98,254,0.12) 38% 50%, transparent 50%),
+      conic-gradient(from 0deg, rgba(15,98,254,0.08), rgba(120,169,255,0.24), rgba(15,98,254,0.08));
+  }
+
+  .pipe-cross-section::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 212px;
+    width: 5px;
+    height: 270px;
+    background: var(--pc-red);
+    box-shadow: 0 0 0 12px rgba(218,30,40,0.08);
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid rgba(22,22,22,0.26);
+    border-left: 1px solid rgba(22,22,22,0.26);
+    margin-top: 72px;
+  }
+
+  .dark .stat-grid, .blue .stat-grid {
+    border-color: rgba(255,255,255,0.24);
+  }
+
+  .stat-cell {
+    min-height: 230px;
+    padding: 30px;
+    border-right: 1px solid rgba(22,22,22,0.26);
+    border-bottom: 1px solid rgba(22,22,22,0.26);
+  }
+
+  .dark .stat-cell, .blue .stat-cell {
+    border-color: rgba(255,255,255,0.24);
+  }
+
+  .stat-num {
+    font-size: 72px;
+    line-height: 1;
+    font-weight: 300;
+    color: var(--pc-blue-bright);
+  }
+
+  .dark .stat-num, .blue .stat-num { color: var(--pc-cyan); }
+
+  .stat-copy {
+    font-size: 25px;
+    line-height: 1.28;
+    margin-top: 18px;
+  }
+
+  .diagram {
+    position: absolute;
+    left: 64px;
+    right: 64px;
+    bottom: 150px;
+    height: 360px;
+    border-top: 1px solid rgba(22,22,22,0.22);
+    border-bottom: 1px solid rgba(22,22,22,0.22);
+  }
+
+  .dark .diagram { border-color: rgba(255,255,255,0.22); }
+
+  .axis {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: rgba(15,98,254,0.8);
+  }
+
+  .pulse {
+    position: absolute;
+    top: calc(50% - 8px);
+    width: 16px;
+    height: 16px;
+    background: var(--pc-blue-bright);
+  }
+
+  .dark .pulse { background: var(--pc-cyan); }
+
+  .pulse.red { background: var(--pc-red); }
+
+  .big-number {
+    position: absolute;
+    left: 64px;
+    top: 150px;
+    font-size: 182px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--pc-blue-bright);
+  }
+
+  .text-offset { margin-left: 210px; padding-top: 14px; }
+
+  .image-band {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 525px;
+    background: var(--pc-navy);
+    overflow: hidden;
+  }
+
+  .image-band .wire {
+    position: absolute;
+    inset: 72px 64px 90px;
+    border: 1px solid rgba(120,169,255,0.72);
+  }
+
+  .image-band .wire::before,
+  .image-band .wire::after {
+    content: "";
+    position: absolute;
+    background: rgba(120,169,255,0.72);
+  }
+
+  .image-band .wire::before { left: 10%; right: 12%; top: 50%; height: 1px; }
+  .image-band .wire::after { top: 14%; bottom: 10%; left: 50%; width: 1px; }
+
+  .chips {
+    position: absolute;
+    right: 74px;
+    bottom: 74px;
+    display: grid;
+    grid-template-columns: repeat(4, 72px);
+    gap: 18px;
+    transform: perspective(600px) rotateX(58deg) rotateZ(-28deg);
+  }
+
+  .chip {
+    height: 72px;
+    background: linear-gradient(135deg, rgba(120,169,255,0.95), rgba(15,98,254,0.45));
+    border: 1px solid rgba(255,255,255,0.28);
+  }
+
+  .warning {
+    width: 0;
+    height: 0;
+    border-left: 44px solid transparent;
+    border-right: 44px solid transparent;
+    border-bottom: 78px solid var(--pc-warning);
+    position: relative;
+  }
+
+  .warning::after {
+    content: "!";
+    position: absolute;
+    top: 24px;
+    left: -7px;
+    font: 700 38px/1 "IBM Plex Sans", Arial, sans-serif;
+    color: #161616;
+  }
+
+  .quote {
+    font-size: 58px;
+    font-weight: 300;
+    line-height: 1.18;
+    max-width: 860px;
+  }
+
+  .label-pill {
+    display: inline-block;
+    padding: 9px 12px;
+    background: var(--pc-blue-bright);
+    color: #fff;
+    font: 600 14px/1 "IBM Plex Mono", monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!--
+GPT Image 2 prompt for slide 01:
+Photorealistic industrial close-up of a large 47-inch ultrasonic crack detection inline inspection tool being assembled on a clean workshop floor, blue anodized modules, steel flanges, precision sensors, cable harness details, low camera angle, cool overhead factory lighting, shallow depth of field, documentary engineering photography, no people, no text, no logos, leave negative space on the left for typography.
+Use a real ACME Integrity workshop photo instead if available.
+-->
+<section class="slide dark">
+  <div class="rule-top"></div>
+  <div class="brand">ACME Integrity</div>
+  <div class="meta">UTCD 47 / KSA</div>
+  <div class="content">
+    <p class="eyebrow">Assembly complete</p>
+    <h1>A clean report is <strong>not proof</strong> of integrity.</h1>
+    <div class="kicker-line"></div>
+    <p class="body">It is proof of what one tool could measure. The stronger question is whether that tool was built for the threat you actually have.</p>
+  </div>
+  <div class="photo-slot" style="right:-1px; bottom:0; width:470px; height:520px; color:#fff;" data-label="Real UTCD 47 shop-floor photo or GPT Image 2 visual"></div>
+  <div class="footer"><span>Inline inspection / Crack detection</span><span>01 / 07</span></div>
+</section>
+
+<!--
+GPT Image 2 prompt for slide 02:
+Abstract technical visualization of a pipeline inspection detection threshold, cross-section of steel pipe with visible corrosion pit, dent, and a very thin axial crack below the measurement threshold, Carbon Design System inspired geometry, pale cool gray background, blue technical linework, precise engineering diagram feel, no text, no logos.
+-->
+<section class="slide light">
+  <div class="rule-top"></div>
+  <div class="brand">ACME Integrity</div>
+  <div class="meta">Blind spot</div>
+  <div class="content">
+    <p class="eyebrow">The missed assumption</p>
+    <h2>Every ILI technology has a <span class="serif">detection limit</span>.</h2>
+    <p class="body">Below that limit, features are not absent. They are invisible to that method.</p>
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-num">01</div><p class="stat-copy">Metal loss changes volume.</p></div>
+      <div class="stat-cell"><div class="stat-num">02</div><p class="stat-copy">Geometry changes shape.</p></div>
+      <div class="stat-cell"><div class="stat-num">03</div><p class="stat-copy">Cracks separate steel along a plane.</p></div>
+      <div class="stat-cell"><div class="stat-num">04</div><p class="stat-copy">One report cannot answer every threat question.</p></div>
+    </div>
+  </div>
+  <div class="footer"><span>Physics before confidence</span><span>02 / 07</span></div>
+</section>
+
+<!--
+GPT Image 2 prompt for slide 03:
+Minimal magnetic flux leakage concept art, a steel pipe wall with magnetic field lines bending around a corrosion pit, technical blue line rendering on dark navy background, precise but cinematic, subtle glow, no text, no people, no logos.
+-->
+<section class="slide cool">
+  <div class="rule-top"></div>
+  <div class="brand">ACME Integrity</div>
+  <div class="meta">MFL physics</div>
+  <div class="content">
+    <p class="eyebrow">What MFL answers well</p>
+    <h2>MFL detects flux leakage from <strong>missing metal</strong>.</h2>
+    <p class="body">Corrosion pits remove volume. The signal is clear. The sizing can be reliable.</p>
+  </div>
+  <div class="diagram">
+    <div class="axis"></div>
+    <div class="pulse" style="left: 18%;"></div>
+    <div class="pulse" style="left: 31%; top: calc(50% - 42px);"></div>
+    <div class="pulse" style="left: 46%; top: calc(50% + 30px);"></div>
+    <div class="pulse" style="left: 68%; top: calc(50% - 20px);"></div>
+  </div>
+  <div class="footer"><span>Corrosion / volumetric loss</span><span>03 / 07</span></div>
+</section>
+
+<!--
+GPT Image 2 prompt for slide 04:
+Macro technical visualization of a hairline axial crack in a steel pipe wall, ultrasonic wavefronts entering the material and reflecting from a planar flaw, dark navy background, blue and cyan linework, high precision engineering illustration, no text, no logos.
+-->
+<section class="slide dark">
+  <div class="rule-top"></div>
+  <div class="brand">ACME Integrity</div>
+  <div class="meta">Crack physics</div>
+  <div class="content">
+    <p class="eyebrow">What changes with cracking</p>
+    <h2>A crack may remove <span class="serif">almost no volume</span>.</h2>
+    <p class="body">It separates the steel along a plane. Magnetic flux may pass through with weak, ambiguous, or absent disruption.</p>
+  </div>
+  <div style="position:absolute; right:82px; bottom:210px;">
+    <div class="pipe-cross-section"></div>
+  </div>
+  <div class="footer"><span>Planar flaws / axial cracking</span><span>04 / 07</span></div>
+</section>
+
+<!--
+GPT Image 2 prompt for slide 05:
+Realistic ultrasonic crack detection inspection tool sensor array inside a large-diameter pipe, polished steel, blue sensor modules, controlled industrial lighting, camera looking through the pipe bore, cinematic but technical, no people, no text, no logos. Leave top half clear for typography.
+-->
+<section class="slide light">
+  <div class="rule-top"></div>
+  <div class="brand">ACME Integrity</div>
+  <div class="meta">Tool selection</div>
+  <div class="content">
+    <div class="big-number">47"</div>
+    <div class="text-offset">
+      <p class="eyebrow">Why UTCD exists</p>
+      <h2>Ask the tool the question it was built to answer.</h2>
+      <p class="body">UTCD is built for ultrasonic crack detection: planar flaws, crack-like indications, and threats that MFL physics cannot reliably prove absent.</p>
+    </div>
+  </div>
+  <div class="image-band">
+    <div class="wire"></div>
+    <div class="chips">
+      <div class="chip"></div><div class="chip"></div><div class="chip"></div><div class="chip"></div>
+      <div class="chip"></div><div class="chip"></div><div class="chip"></div><div class="chip"></div>
+      <div class="chip"></div><div class="chip"></div><div class="chip"></div><div class="chip"></div>
+    </div>
+  </div>
+  <div class="footer"><span>UTCD / ultrasonic crack detection</span><span>05 / 07</span></div>
+</section>
+
+<!--
+GPT Image 2 prompt for slide 06:
+Documentary photo style of a large inline inspection tool prepared for deployment in the Middle East, industrial workshop, precision tool on supports, clean steel, blue accents, warm daylight mixed with cool overhead light, no people, no text, no logos. Leave left side open for copy.
+Use a real deployment or assembly photo if available.
+-->
+<section class="slide blue">
+  <div class="rule-top" style="background:#78A9FF;"></div>
+  <div class="brand">ACME Integrity</div>
+  <div class="meta">Deployment</div>
+  <div class="content">
+    <p class="eyebrow">Shipping to KSA</p>
+    <h2>This tool is not being deployed because the last report found cracks.</h2>
+    <p class="body">It is being deployed because the last report could not prove they were absent.</p>
+  </div>
+  <div class="photo-slot" style="right:64px; bottom:160px; width:410px; height:410px; color:#fff;" data-label="Real tool deployment photo preferred"></div>
+  <div class="footer"><span>Threat-led inspection planning</span><span>06 / 07</span></div>
+</section>
+
+<!--
+GPT Image 2 prompt for slide 07:
+Abstract Carbon Design System style closing image for pipeline integrity decision-making, dark navy field with a precise blue line path moving through a pipeline cross-section, one yellow warning triangle marker, technical grid, minimal, premium enterprise design, no text, no logos.
+-->
+<section class="slide dark">
+  <div class="rule-top"></div>
+  <div class="brand">ACME Integrity</div>
+  <div class="meta">Decision point</div>
+  <div class="content">
+    <div class="warning" style="margin-bottom:42px;"></div>
+    <p class="quote">A detection limit is not a footnote. It is the real answer your inspection gives.</p>
+    <p class="body">The risk is not the tool. The risk is treating the report as if it answered a question it was never asked.</p>
+  </div>
+  <div class="technical-art" style="right:-80px; bottom:-80px; width:520px; height:520px;"></div>
+  <div class="footer"><span>ACME Integrity</span><span>07 / 07</span></div>
+</section>
+
+</body>
+</html>

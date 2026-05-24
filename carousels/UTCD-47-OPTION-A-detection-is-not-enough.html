@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carousel: Detection Is Not Enough — ACME Integrity UTCD 47"</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; flex-wrap: wrap; gap: 50px; padding: 50px; justify-content: center; }
+
+  .slide {
+    width: 1080px; height: 1350px;
+    font-family: 'Montserrat', sans-serif;
+    position: relative; overflow: hidden;
+    border-radius: 24px;
+  }
+
+  /* Corner branding block */
+  .brand-tag {
+    position: absolute; top: 50px; left: 60px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .brand-tag .dot {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: currentColor; opacity: 0.6;
+  }
+  .brand-tag span {
+    font-size: 15px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; opacity: 0.6;
+  }
+
+  /* Arrow nav element */
+  .nav-arrow {
+    position: absolute; top: 50px; right: 60px;
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 700;
+  }
+
+  /* Slide number */
+  .slide-num {
+    position: absolute; bottom: 55px; right: 65px;
+    font-size: 16px; font-weight: 600; letter-spacing: 2px; opacity: 0.4;
+  }
+
+  /* Bottom logo */
+  .bottom-logo {
+    position: absolute; bottom: 55px; left: 65px;
+    font-size: 15px; font-weight: 800; letter-spacing: 3px; opacity: 0.4;
+  }
+
+  /* Highlight underline */
+  .hl {
+    text-decoration: underline;
+    text-decoration-color: #3B82F6;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 4px;
+  }
+
+  /* Circle highlight */
+  .circle-hl {
+    border: 3px solid #3B82F6;
+    border-radius: 50px;
+    padding: 4px 20px;
+    display: inline-block;
+  }
+
+  /* Cards */
+  .info-card {
+    border-radius: 16px;
+    padding: 35px 40px;
+    margin-bottom: 20px;
+  }
+
+  /* Large number */
+  .big-num {
+    font-size: 180px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- SLIDE 1: COVER — Blue bg -->
+<!-- ============================================ -->
+<div class="slide" style="background: #1456A0; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; padding: 0 80px;">
+
+  <div class="brand-tag" style="color: #FFFFFF;">
+    <div class="dot"></div>
+    <span>ACME Integrity</span>
+  </div>
+
+  <div class="nav-arrow" style="background: rgba(255,255,255,0.15); color: #FFFFFF;">→</div>
+
+  <p style="font-size: 18px; font-weight: 700; letter-spacing: 5px; color: rgba(255,255,255,0.5); margin-bottom: 40px;">UTCD 47" — ASSEMBLY COMPLETE</p>
+
+  <h1 style="font-size: 76px; font-weight: 900; line-height: 1.08; letter-spacing: -2px; margin-bottom: 50px;">
+    Finding a crack<br>is the <span class="circle-hl" style="border-color: rgba(255,255,255,0.6);">easy</span> part.
+  </h1>
+
+  <div style="width: 100px; height: 4px; background: rgba(255,255,255,0.4); margin-bottom: 40px;"></div>
+
+  <p style="font-size: 26px; font-weight: 500; color: rgba(255,255,255,0.75); line-height: 1.5;">
+    The hard part is sizing it accurately enough<br>to defend the decision that follows.
+  </p>
+
+  <p class="bottom-logo" style="color: #FFFFFF;">ACME Integrity</p>
+  <p class="slide-num" style="color: #FFFFFF;">01 / 07</p>
+</div>
+
+
+<!-- ============================================ -->
+<!-- SLIDE 2: REALITY — White bg -->
+<!-- ============================================ -->
+<div class="slide" style="background: #F4F6F9; color: #0A0F1A; display: flex; flex-direction: column; padding: 80px;">
+
+  <div class="brand-tag" style="color: #0A0F1A;">
+    <div class="dot"></div>
+    <span>ACME Integrity</span>
+  </div>
+
+  <div class="nav-arrow" style="background: #1456A0; color: #FFFFFF;">→</div>
+
+  <div style="margin-top: 100px;">
+    <p style="font-size: 16px; font-weight: 700; letter-spacing: 5px; color: #1456A0; margin-bottom: 30px;">THE REALITY</p>
+
+    <h2 style="font-size: 56px; font-weight: 900; line-height: 1.1; margin-bottom: 50px; letter-spacing: -1px;">
+      Every fitness-for-service<br>assessment starts with<br><span class="hl">three numbers.</span>
+    </h2>
+
+    <div style="display: flex; gap: 24px; margin-bottom: 55px;">
+      <div class="info-card" style="background: #0A0F1A; color: #FFFFFF; flex: 1; text-align: center; padding: 45px 30px;">
+        <p style="font-size: 60px; font-weight: 900; margin-bottom: 12px;">01</p>
+        <p style="font-size: 20px; font-weight: 700; letter-spacing: 1px;">Depth</p>
+      </div>
+      <div class="info-card" style="background: #0A0F1A; color: #FFFFFF; flex: 1; text-align: center; padding: 45px 30px;">
+        <p style="font-size: 60px; font-weight: 900; margin-bottom: 12px;">02</p>
+        <p style="font-size: 20px; font-weight: 700; letter-spacing: 1px;">Length</p>
+      </div>
+      <div class="info-card" style="background: #0A0F1A; color: #FFFFFF; flex: 1; text-align: center; padding: 45px 30px;">
+        <p style="font-size: 60px; font-weight: 900; margin-bottom: 12px;">03</p>
+        <p style="font-size: 20px; font-weight: 700; letter-spacing: 1px;">Orientation</p>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-radius: 16px; padding: 35px 40px; border-left: 5px solid #1456A0;">
+      <p style="font-size: 22px; font-weight: 600; color: #3A4255; line-height: 1.5;">
+        Without them, there is no assessment.<br>Only a flag on a report.
+      </p>
+    </div>
+  </div>
+
+  <p class="bottom-logo" style="color: #0A0F1A;">ACME Integrity</p>
+  <p class="slide-num" style="color: #0A0F1A;">02 / 07</p>
+</div>
+
+
+<!-- ============================================ -->
+<!-- SLIDE 3: PROBLEM — Black bg -->
+<!-- ============================================ -->
+<div class="slide" style="background: #0A0F1A; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; padding: 0 80px;">
+
+  <div class="brand-tag" style="color: #FFFFFF;">
+    <div class="dot"></div>
+    <span>ACME Integrity</span>
+  </div>
+
+  <div class="nav-arrow" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">→</div>
+
+  <p style="font-size: 16px; font-weight: 700; letter-spacing: 5px; color: #3B82F6; margin-bottom: 45px;">THE PROBLEM</p>
+
+  <h2 style="font-size: 52px; font-weight: 900; line-height: 1.1; margin-bottom: 55px; letter-spacing: -1px;">
+    A crack <span class="hl">detected</span><br>but mis-sized is still<br>a crack missed.
+  </h2>
+
+  <div style="display: flex; align-items: flex-end; gap: 40px; margin-bottom: 55px;">
+    <div>
+      <p class="big-num" style="color: #3B82F6;">1<span style="font-size: 80px;">mm</span></p>
+    </div>
+    <div style="padding-bottom: 30px;">
+      <p style="font-size: 24px; font-weight: 600; color: rgba(255,255,255,0.7); line-height: 1.5;">
+        of depth error can move a feature from<br>
+        <span style="color: #4ADE80; font-weight: 800;">"monitor"</span> to
+        <span style="color: #F87171; font-weight: 800;">"immediate repair"</span>
+      </p>
+    </div>
+  </div>
+
+  <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 35px;"></div>
+
+  <p style="font-size: 22px; font-weight: 500; color: rgba(255,255,255,0.5); line-height: 1.5;">
+    Or the other way around. Both errors cost.
+  </p>
+
+  <p class="bottom-logo" style="color: #FFFFFF;">ACME Integrity</p>
+  <p class="slide-num" style="color: #FFFFFF;">03 / 07</p>
+</div>
+
+
+<!-- ============================================ -->
+<!-- SLIDE 4: WHY MISSED — White bg -->
+<!-- ============================================ -->
+<div class="slide" style="background: #F4F6F9; color: #0A0F1A; display: flex; flex-direction: column; padding: 80px;">
+
+  <div class="brand-tag" style="color: #0A0F1A;">
+    <div class="dot"></div>
+    <span>ACME Integrity</span>
+  </div>
+
+  <div class="nav-arrow" style="background: #1456A0; color: #FFFFFF;">→</div>
+
+  <div style="margin-top: 100px;">
+    <p style="font-size: 16px; font-weight: 700; letter-spacing: 5px; color: #1456A0; margin-bottom: 35px;">WHY IT'S MISSED</p>
+
+    <h2 style="font-size: 54px; font-weight: 900; line-height: 1.08; margin-bottom: 60px; letter-spacing: -1px;">
+      Most ILI tools were<br>not built to <span class="circle-hl" style="border-color: #1456A0;">size</span> cracks.
+    </h2>
+
+    <div class="info-card" style="background: #FFFFFF; border-left: 5px solid #E5E7EB; margin-bottom: 24px;">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: #FEE2E2; display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 24px; color: #EF4444; font-weight: 900;">✕</span>
+        </div>
+        <div>
+          <p style="font-size: 22px; font-weight: 800; margin-bottom: 6px;">Can flag a signature</p>
+          <p style="font-size: 18px; color: #6B7280; font-weight: 500;">Sometimes. Depending on orientation and size.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card" style="background: #FFFFFF; border-left: 5px solid #E5E7EB;">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: #FEE2E2; display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 24px; color: #EF4444; font-weight: 900;">✕</span>
+        </div>
+        <div>
+          <p style="font-size: 22px; font-weight: 800; margin-bottom: 6px;">Can size it to defend a decision</p>
+          <p style="font-size: 18px; color: #6B7280; font-weight: 500;">Rarely. The physics don't support it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 50px; background: #0A0F1A; border-radius: 16px; padding: 35px 40px;">
+      <p style="font-size: 22px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.5;">
+        Flagging ≠ Sizing. The gap between them is where bad decisions live.
+      </p>
+    </div>
+  </div>
+
+  <p class="bottom-logo" style="color: #0A0F1A;">ACME Integrity</p>
+  <p class="slide-num" style="color: #0A0F1A;">04 / 07</p>
+</div>
+
+
+<!-- ============================================ -->
+<!-- SLIDE 5: WHY IT MATTERS — Blue bg -->
+<!-- ============================================ -->
+<div class="slide" style="background: #1456A0; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; padding: 0 80px;">
+
+  <div class="brand-tag" style="color: #FFFFFF;">
+    <div class="dot"></div>
+    <span>ACME Integrity</span>
+  </div>
+
+  <div class="nav-arrow" style="background: rgba(255,255,255,0.15); color: #FFFFFF;">→</div>
+
+  <p style="font-size: 16px; font-weight: 700; letter-spacing: 5px; color: rgba(255,255,255,0.5); margin-bottom: 40px;">WHY IT MATTERS</p>
+
+  <h2 style="font-size: 58px; font-weight: 900; line-height: 1.08; margin-bottom: 55px; letter-spacing: -1px;">
+    The decision<br>that follows is only<br>as accurate as the<br><span style="border-bottom: 4px solid rgba(255,255,255,0.6); padding-bottom: 4px;">measurement</span><br>that started it.
+  </h2>
+
+  <div style="display: flex; gap: 24px;">
+    <div class="info-card" style="background: rgba(255,255,255,0.1); flex: 1; text-align: center; padding: 40px 20px;">
+      <p style="font-size: 18px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.5); margin-bottom: 15px;">UNDERSIZED</p>
+      <p style="font-size: 20px; font-weight: 600; line-height: 1.4;">Defect left in service.<br>Failure follows.</p>
+    </div>
+    <div class="info-card" style="background: rgba(255,255,255,0.1); flex: 1; text-align: center; padding: 40px 20px;">
+      <p style="font-size: 18px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.5); margin-bottom: 15px;">OVERSIZED</p>
+      <p style="font-size: 20px; font-weight: 600; line-height: 1.4;">Unnecessary dig.<br>Budget wasted.</p>
+    </div>
+  </div>
+
+  <p style="font-size: 22px; font-weight: 500; color: rgba(255,255,255,0.5); margin-top: 50px;">
+    Bad sizing costs — in both directions.
+  </p>
+
+  <p class="bottom-logo" style="color: #FFFFFF;">ACME Integrity</p>
+  <p class="slide-num" style="color: #FFFFFF;">05 / 07</p>
+</div>
+
+
+<!-- ============================================ -->
+<!-- SLIDE 6: POSITIONING — Black bg (tool shown) -->
+<!-- ============================================ -->
+<div class="slide" style="background: #0A0F1A; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; padding: 0 80px;">
+
+  <div class="brand-tag" style="color: #FFFFFF;">
+    <div class="dot"></div>
+    <span>ACME Integrity</span>
+  </div>
+
+  <div class="nav-arrow" style="background: rgba(255,255,255,0.1); color: #FFFFFF;">→</div>
+
+  <p style="font-size: 16px; font-weight: 700; letter-spacing: 5px; color: #3B82F6; margin-bottom: 40px;">THE APPROACH</p>
+
+  <h2 style="font-size: 52px; font-weight: 900; line-height: 1.08; margin-bottom: 50px; letter-spacing: -1px;">
+    Ultrasonic shear waves<br>return depth <span class="hl">directly.</span>
+  </h2>
+
+  <p style="font-size: 24px; font-weight: 500; color: rgba(255,255,255,0.6); line-height: 1.55; margin-bottom: 50px;">
+    Not estimated. Not inferred from flux. Measured.
+  </p>
+
+  <div class="info-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+    <p style="font-size: 16px; font-weight: 700; letter-spacing: 4px; color: #3B82F6; margin-bottom: 20px;">UTCD 47" — ASSEMBLED THIS WEEK</p>
+    <div style="display: flex; gap: 40px;">
+      <div>
+        <p style="font-size: 42px; font-weight: 900; margin-bottom: 8px;">47<span style="font-size: 24px;">"</span></p>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.5); font-weight: 600;">Diameter</p>
+      </div>
+      <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+      <div>
+        <p style="font-size: 42px; font-weight: 900; margin-bottom: 8px;">UTCD</p>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.5); font-weight: 600;">Technology</p>
+      </div>
+      <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+      <div>
+        <p style="font-size: 42px; font-weight: 900; margin-bottom: 8px;">KSA</p>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.5); font-weight: 600;">Destination</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 21px; font-weight: 600; color: rgba(255,255,255,0.4); margin-top: 45px;">
+    Built to deliver numbers an integrity assessment can defend.
+  </p>
+
+  <p class="bottom-logo" style="color: #FFFFFF;">ACME Integrity</p>
+  <p class="slide-num" style="color: #FFFFFF;">06 / 07</p>
+</div>
+
+
+<!-- ============================================ -->
+<!-- SLIDE 7: CLOSING — Blue bg -->
+<!-- ============================================ -->
+<div class="slide" style="background: #1456A0; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 80px;">
+
+  <div class="brand-tag" style="color: #FFFFFF;">
+    <div class="dot"></div>
+    <span>ACME Integrity</span>
+  </div>
+
+  <p style="font-size: 16px; font-weight: 700; letter-spacing: 5px; color: rgba(255,255,255,0.5); margin-bottom: 45px;">THE TAKEAWAY</p>
+
+  <h2 style="font-size: 68px; font-weight: 900; line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px;">
+    Detection is a finding.
+  </h2>
+  <h2 style="font-size: 68px; font-weight: 900; line-height: 1.1; margin-bottom: 60px; letter-spacing: -2px;">
+    <span class="circle-hl" style="border-color: rgba(255,255,255,0.5);">Sizing</span> is a decision.
+  </h2>
+
+  <div style="background: rgba(255,255,255,0.12); border-radius: 16px; padding: 35px 50px; max-width: 750px;">
+    <p style="font-size: 22px; font-weight: 600; line-height: 1.5; margin-bottom: 15px;">
+      Planning an inspection where cracking is a concern?
+    </p>
+    <p style="font-size: 19px; font-weight: 500; color: rgba(255,255,255,0.7); line-height: 1.5;">
+      Let's talk about whether UTCD belongs in your next run.
+    </p>
+  </div>
+
+  <p style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.5); margin-top: 50px; letter-spacing: 2px;">acme-integrity.example</p>
+
+  <p class="bottom-logo" style="color: #FFFFFF;">ACME Integrity</p>
+  <p class="slide-num" style="color: #FFFFFF;">07 / 07</p>
+</div>
+
+
+<!-- GEMINI PROMPT: "Ultra-realistic 3D render of a UTCD ultrasonic crack detection ILI inspection tool, 47-inch diameter, freshly assembled in a clean industrial facility. The tool is cylindrical with ultrasonic transducer rings visible around its body, polyurethane cups, and electronic housing. Shop floor setting with directional overhead lighting creating dramatic shadows. Metallic finish, precision engineering detail. Dark background. Cinematic lighting. No text. No people." -->
+
+<!-- NOTE FOR REAL POST: Replace Slide 1 and/or Slide 6 background with your real photo of the assembled 47" UTCD tool. Use a dark overlay (rgba(0,0,0,0.5)) on the photo to keep text readable. -->
+
+</body>
+</html>

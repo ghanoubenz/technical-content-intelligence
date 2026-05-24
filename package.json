@@ -1,0 +1,8 @@
+{
+  "name": "content-system",
+  "version": "1.0.0",
+  "description": "Portfolio-ready B2B content automation system",
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "linkedin-content": {
+      "source": "inferen-sh/skills",
+      "sourceType": "github",
+      "computedHash": "fefd64c3b89b53cc87fce12a955f47ca7ae48b8cd2164471fe17bfd1b45f6e33"
+    },
+    "marketing-ideas": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "ece95da6d74dc84deb45035109311748697b7b074af1a78e111299464306cad2"
+    },
+    "marketing-psychology": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "5b8654c4d6db63d9da55f7cd56f2babd92e602b089e96a86ef38c7f547f51d52"
+    },
+    "social-content": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "e711193f528a764e988d2422ba851e5310dde66bea0962b1afd2b7aca7e00b31"
+    }
+  }
+}
