@@ -1,51 +1,64 @@
 # Content System
 
-Portfolio-ready B2B content automation system for turning technical source material into LinkedIn calendars, carousel concepts, fact-check notes, and production-ready post drafts.
+AI-assisted marketing content production workflow that converts approved company materials into structured LinkedIn post and carousel ideas with human review.
 
 ## Problem
 
-Technical companies often have strong internal knowledge but weak content operations. Product specs, source documents, draft posts, visual prompts, and publishing calendars live in separate files, so each campaign takes too long to rebuild. The risk is either generic marketing content or polished posts that make unsupported technical claims.
+Marketing teams need consistent content, but generating posts from technical material is time-consuming and easy to misalign with brand rules. Real campaign outputs can include sensitive strategy, product claims, and calendar plans. A portfolio version should show the workflow without publishing any private results.
 
 ## Solution
 
-This project organizes a full content-production workflow around source-backed content. It defines content pillars, calendar generation scripts, fact-check gates, carousel HTML drafts, image-prompt systems, and tracker structures that help a team move from technical evidence to publishable social content.
+This repository keeps the content system structure while removing real generated posts, carousel HTML, calendars, and campaign plans. It demonstrates how approved materials can feed AI-assisted research, content angles, carousel structures, image prompts, and final approval steps using only placeholder folders and dummy samples.
 
-## Architecture
+## Workflow Infographic
 
-- Strategy docs: messaging pillars, launch plan, content calendar, and production rules.
-- Generation scripts: Node.js scripts that build structured Excel calendars with topics, captions, prompts, and statuses.
-- Fact-check workflow: claim classification before visual production.
-- Carousel drafts: HTML-based 1080x1350 carousel layouts for engineering-heavy social posts.
-- Single-post library: caption drafts grouped by campaign phase.
-- Samples: safe CSV examples instead of private workbooks or internal source files.
+![Content workflow](docs/infographic.svg)
 
-## Key Design Decisions
+## System Architecture
 
-- Every technical claim passes through a fact gate before design work. Claims are labeled as verified, needs confirmation, unsupported, risky wording, rewrite, or remove.
-- The system separates technical authority from commercial intent: approximately 70% technical usefulness, 20% capability framing, and 10% sales direction.
-- Source documents and generated images are excluded from the public repo because they may contain client, vendor, or proprietary material.
-- HTML carousel drafts are kept as editable source artifacts so the design system is visible without publishing private assets.
-- Calendar scripts output structured spreadsheets locally, but generated spreadsheets are ignored by Git.
+- Content planning structure for source materials, output folders, and approval-ready assets.
+- Placeholder output directories for carousels, single posts, video ideas, email templates, and brand assets.
+- Dummy sample files showing how safe test data should look.
+- AI workflow designed around approved marketing material grounding and human approval.
 
-## Results
+## Tools Used
 
-- Condensed a scattered content operation into a repeatable campaign system.
-- Reduced content planning and review time from roughly 2 weeks to about 1 day for a full campaign calendar.
-- Lowered manual review effort by about 90% by standardizing pillars, status flow, fact-check labels, and visual prompt structure.
+GPT, AI image generation, approved marketing material grounding, brand style rules, content calendars, and human approval review.
 
-## Tech Stack
+## Key Features
 
-- Node.js
-- ExcelJS
-- Markdown
-- HTML/CSS carousel templates
-- CSV/Excel-based editorial tracking
+- Marketing material ingestion concept.
+- AI-generated content angle workflow.
+- LinkedIn post and carousel structure workflow.
+- Image prompt generation with fixed design style.
+- Human review before final content is used.
+- Empty output folders preserved for implementation clarity.
 
-## How To Run Locally
+## Example Workflow
 
-```bash
-npm install
-node build-calendar.js
-```
+1. Add approved dummy marketing material.
+2. Generate research angles and content themes.
+3. Draft post or carousel structure.
+4. Generate image prompts with brand rules.
+5. Review output and approve final content.
 
-The scripts generate local workbook artifacts for planning and review. Those outputs are intentionally ignored by Git; use `examples/content-calendar.sample.csv` as the public-safe sample shape.
+## Business Impact
+
+The system shows how AI can make content operations faster and more structured while still respecting brand, factual accuracy, and privacy controls. Real carousel posts, calendars, and campaign outputs have been removed so reviewers see the architecture instead of private business material.
+
+## Security & Data Privacy
+
+This repository is a portfolio-safe version of the system. All real client data, API keys, tender documents, CRM exports, generated proposals, calendar outputs, and operational results have been removed. Any files shown are empty placeholders or dummy samples created only to demonstrate the workflow structure.
+
+## How to Run Locally
+
+1. Copy `.env.example` to `.env` and add your own local credentials.
+2. Run `npm install` if you add executable scripts.
+3. Use the empty placeholder folders to implement your own safe workflow.
+4. Keep generated outputs outside git unless they are dummy samples.
+
+## Future Improvements
+
+- Add a web approval queue for content drafts.
+- Add brand rule validation before final export.
+- Add demo-only generated examples with clearly fake data.
