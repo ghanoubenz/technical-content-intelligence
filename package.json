@@ -1,7 +1,7 @@
 {
-  "name": "content-system",
+  "name": "technical-content-intelligence",
   "version": "1.0.0",
-  "description": "Portfolio-ready B2B content automation system",
+  "description": "Portfolio-safe technical content intelligence workflow with source-grounded review stages",
   "dependencies": {
     "exceljs": "^4.4.0"
   }

@@ -1,64 +1,90 @@
-# Content System
+# Technical Content Intelligence
 
-AI-assisted marketing content production workflow that converts approved company materials into structured LinkedIn post and carousel ideas with human review.
+AI-assisted workflow that turns approved technical source material into structured content briefs, carousel outlines, image prompts, and review-ready posts with human approval.
 
-## Problem
+## Why I Built This
 
-Marketing teams need consistent content, but generating posts from technical material is time-consuming and easy to misalign with brand rules. Real campaign outputs can include sensitive strategy, product claims, and calendar plans. A portfolio version should show the workflow without publishing any private results.
+Technical teams often have useful source material but no repeatable way to turn it into accurate, reviewable public content. I built this portfolio-safe version to show the workflow structure without publishing source documents, internal campaign plans, or generated posts.
 
-## Solution
+## The Problem
 
-This repository keeps the content system structure while removing real generated posts, carousel HTML, calendars, and campaign plans. It demonstrates how approved materials can feed AI-assisted research, content angles, carousel structures, image prompts, and final approval steps using only placeholder folders and dummy samples.
+Technical content can become risky when claims are not grounded in approved source material. Marketing calendars, carousel drafts, and image prompts can also contain private planning information. A safe public repo should show the architecture and review model, not the real outputs.
 
-## Workflow Infographic
+## Workflow Stages
 
-![Content workflow](docs/infographic.svg)
+1. Upload approved source material.
+2. Extract product or service facts.
+3. Generate content angles.
+4. Create content calendar structure.
+5. Create carousel outline.
+6. Generate image prompt using fixed brand style.
+7. Route claims and creative output to human review.
+8. Prepare final content package outside Git.
 
-## System Architecture
+## Workflow Infographics
 
-- Content planning structure for source materials, output folders, and approval-ready assets.
-- Placeholder output directories for carousels, single posts, video ideas, email templates, and brand assets.
-- Dummy sample files showing how safe test data should look.
-- AI workflow designed around approved marketing material grounding and human approval.
+- [Workflow](docs/infographics/content-workflow.svg)
+- [Review gates](docs/infographics/content-review-gates.svg)
+- [Architecture](docs/infographics/content-architecture.svg)
 
-## Tools Used
+## Architecture
 
-GPT, AI image generation, approved marketing material grounding, brand style rules, content calendars, and human approval review.
+This public repo is intentionally lightweight. The original generated outputs were removed, and the repository now documents the structure for a technical content intelligence workflow.
 
-## Key Features
+- Approved source material is treated as the only valid grounding input.
+- AI drafts content angles, carousel outlines, and image prompts.
+- Claim classification separates factual claims, opinion, product capability, and proof-needed statements.
+- Human review is required before any content is published.
+- Output folders are placeholders only and do not contain real campaign results.
 
-- Marketing material ingestion concept.
-- AI-generated content angle workflow.
-- LinkedIn post and carousel structure workflow.
-- Image prompt generation with fixed design style.
-- Human review before final content is used.
-- Empty output folders preserved for implementation clarity.
+## What I Built
 
-## Example Workflow
+I designed the content workflow, mapped the review stages, defined the input/output structure, and cleaned the public repository so it demonstrates the system without exposing internal campaign material.
 
-1. Add approved dummy marketing material.
-2. Generate research angles and content themes.
-3. Draft post or carousel structure.
-4. Generate image prompts with brand rules.
-5. Review output and approve final content.
+My focus was:
+- turning approved technical material into structured content operations
+- keeping claims source-grounded
+- separating draft generation from approval
+- showing folder architecture without publishing real outputs
+- keeping internal planning and source maps out of the public repo
 
-## Business Impact
+## Architecture Decision Notes
 
-The system shows how AI can make content operations faster and more structured while still respecting brand, factual accuracy, and privacy controls. Real carousel posts, calendars, and campaign outputs have been removed so reviewers see the architecture instead of private business material.
+- I removed generated posts and carousel HTML because outputs are more likely to contain sensitive campaign strategy than the workflow structure itself.
+- I kept placeholder folders so another engineer can see where content artifacts would be produced.
+- I separated sample input fixtures from generated outputs so demo data is clearly not operational data.
+- I positioned this as technical content intelligence rather than general marketing automation because source-grounding and claim review are the important engineering constraints.
 
 ## Security & Data Privacy
 
-This repository is a portfolio-safe version of the system. All real client data, API keys, tender documents, CRM exports, generated proposals, calendar outputs, and operational results have been removed. Any files shown are empty placeholders or dummy samples created only to demonstrate the workflow structure.
+This repository is a portfolio-safe version of the system. All real client data, API keys, tender documents, CRM exports, generated proposals, calendar outputs, outreach lists, logs, and operational results have been removed.
+
+Any files shown in `/examples`, `/test-fixtures`, or `/schemas` are dummy samples created only to demonstrate workflow structure.
+
+The system is designed around:
+- environment variables for secrets
+- human approval gates before external actions
+- empty placeholder folders for generated outputs
+- no real production data in the public repository
+- separation between demo data and private operational data
+
+## Current Status
+
+This is a portfolio-safe version of the system. The public repository demonstrates workflow structure, review gates, and dummy fixtures. Real source documents, campaign plans, generated carousel posts, calendars, and approval comments have been removed.
+
+Status:
+- Workflow architecture: documented
+- Demo schemas: included
+- Sensitive outputs: removed
+- Real credentials: not included
+- Production data: not included
 
 ## How to Run Locally
 
-1. Copy `.env.example` to `.env` and add your own local credentials.
-2. Run `npm install` if you add executable scripts.
-3. Use the empty placeholder folders to implement your own safe workflow.
-4. Keep generated outputs outside git unless they are dummy samples.
+This repo is primarily a documented workflow skeleton. Use the `examples`, `schemas`, and `test-fixtures` folders as the starting point for a safe implementation. Generated content should stay outside Git unless it is clearly dummy data.
 
 ## Future Improvements
 
-- Add a web approval queue for content drafts.
-- Add brand rule validation before final export.
-- Add demo-only generated examples with clearly fake data.
+- Add claim classification schema validation.
+- Add approval-state tracking for content drafts.
+- Add demo-only content fixtures with clearly fake data.
