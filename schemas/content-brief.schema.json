@@ -1,0 +1,15 @@
+{
+  "note": "Dummy schema for portfolio demonstration only.",
+  "type": "object",
+  "properties": {
+    "source_facts": {
+      "type": "array"
+    },
+    "claims": {
+      "type": "array"
+    },
+    "approval_status": {
+      "type": "string"
+    }
+  }
+}
